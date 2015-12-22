@@ -10,8 +10,9 @@
           (concat "%" (number-to-string w) "d"))))))
 (defun linum-format-func (line)
   (concat
-   (propertize (format linum-format-fmt line) 'face 'linum)
-   (propertize " " 'face 'linum-padding-right)))
+    (propertize " " 'face 'linum)
+    (propertize (format linum-format-fmt line) 'face 'linum)
+    (propertize " " 'face 'linum)))
 (unless window-system
   (setq linum-format 'linum-format-func))
 
